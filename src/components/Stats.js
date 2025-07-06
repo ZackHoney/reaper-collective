@@ -2,7 +2,11 @@ import '../App.css'
 
 const Stats = () => {
   return (
-        <h1>Stats</h1>
+    <div className="stats-body">
+      <h1>Stats</h1>
+    </div>
+      
+        
    
   )
 }
