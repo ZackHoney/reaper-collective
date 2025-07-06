@@ -1,6 +1,9 @@
 import React from 'react'
-
+import { useNavigate } from 'react-router-dom'
+import Stats from './Stats';
 const NavBar = () => {
+  const navigate = useNavigate();
+
   return (
    <div className='nav-container'>
           <nav className="nav">
@@ -25,9 +28,9 @@ const NavBar = () => {
             <button className="button">
               Mods List
             </button>
-            <button className='button'>
+           <button className='button' onClick={() => navigate(<Stats />)}>
               My Stats
-            </button>
+           </button>
           </nav>
         </div>
   )
