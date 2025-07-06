@@ -1,38 +1,32 @@
-.App {
-  text-align: center;
+* {
+  color: black;
+  max-width: 100vw;
+  max-height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.body {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-content: center;
+  align-self: center;
+  background-image: url("/src/images/BadCoLogo_Discord_Banner2222.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.nav-container{
+  display: flex;
+  width: 100vw;
+  justify-content: end;
+}
+
+.button{
+  background: black;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  border-color: white;
+  border-radius: 15px;
+  font-size: x-large;
+  padding: 10px;
+  margin: 10px;
 }
