@@ -1,18 +1,8 @@
 * {
-  max-width: 100vw;
-  max-height: 100vh;
+  background-image: url("/src/images//BadCoLogo_Discord_Banner2222.png");
+  color: white;
 }
 
-.body {
-  display: flex;
-  align-content: center;
-  align-self: center;
-  background-image: url("/src/images/BadCoLogo_Discord_Banner2222.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
-}
 
 .nav-container{
   display: flex;
@@ -21,23 +11,39 @@
 }
 
 .button{
-  background: black;
+  display:inline-flex;
+  flex-direction: row;
+  background: rgb(0, 0, 0);
   color: white;
-  border-color: white;
-  border-radius: 15px;
+  border: 2px solid silver;
+  border-radius: 10px;
   font-size: x-large;
   padding: 10px;
+  padding-top:inherit;
   margin: 10px;
+  text-decoration: none;
 }
 
-.home-page-h1{
-  color: red;
+
+.stats-body{
+  display: flex;
+  align-content: center;
+  align-self: center;
+  background-image: url("/src/images/skull_soldier-01.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 
-.videos-h1{
-  color: red;
+.login{
+  color: white;
 }
 
-.projects-h1{
-  color: blue;
+.home-text{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: rgb(191, 191, 191);
+  background: black;
 }

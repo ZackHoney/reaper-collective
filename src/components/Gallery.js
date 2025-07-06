@@ -1,12 +1,8 @@
-import React from 'react'
 import '../App.css'
 
 const Gallery = () => {
   return (
-    <body className="body">
-        
-        <div>Gallery</div>
-    </body>
+    <h1>Gallery</h1>
   )
 }
 

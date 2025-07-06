@@ -1,12 +1,9 @@
-import React from 'react'
 import '../App.css'
 
 const Monetization = () => {
   return (
-    <body className="body">
-        <div className='color: red'>Monetization</div>
+    <h1>Monetization</h1>
         
-    </body>
   )
 }
 

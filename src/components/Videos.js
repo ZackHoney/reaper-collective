@@ -1,12 +1,11 @@
-import React from 'react'
 import '../App.css'
 
 const Videos = () => {
   return (
-    <body className="body">
-        <div className='videos-h1'>Videos</div>
+    
+        <h1 className='videos-h1'>Videos</h1>
         
-    </body>
+    
   )
 }
 
