@@ -1,39 +1,33 @@
 import './App.css';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import NavBar from './components/NavBar';
+import Home from './components/Home';
+import Login from './components/Login';
+import Servers from './components/Servers';
+import Projects from './components/Projects';
+import Videos from './components/Videos';
+import Gallery from './components/Gallery';
+import Monetization from './components/Monetization';
+import Mods from './components/Mods';
+import Stats from './components/Stats'
 
 function App() {
 return (
-  <body className='body'>
-
-    <div className='nav-container'>
-          <nav className="nav">
-            <button className="button">
-              Login
-            </button>
-            <button className="button">
-              Servers
-            </button>
-            <button className="button">
-              Projects
-            </button>
-            <button className="button">
-              Videos
-            </button>
-            <button className="button">
-              Gallery
-            </button>
-            <button className="button">
-              Monetization
-            </button>
-            <button className="button">
-              Mods List
-            </button>
-            <button className='button'>
-              My Stats
-            </button>
-          </nav>
-        </div>
-
-  </body>
+    <div>
+      <NavBar />
+      <Routes>
+        <Route path='/' element={<Home />}/>
+        <Route path='/login' element={<Login />} />
+        <Route path='/servers' element={<Servers />} />
+        <Route path='/projects' element={<Projects />} />
+        <Route path='/videos' element={<Videos />} />
+        <Route path='/gallery' element={<Gallery />} />
+        <Route path='/monetization' element={<Monetization />} />
+        <Route path='/mods' element={<Mods />} />
+        <Route path='/stats' element={<Stats />} />
+      </Routes>
+    </div>
   )
 }
 

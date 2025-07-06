@@ -1,5 +1,4 @@
 * {
-  color: black;
   max-width: 100vw;
   max-height: 100vh;
 }
@@ -29,4 +28,16 @@
   font-size: x-large;
   padding: 10px;
   margin: 10px;
+}
+
+.home-page-h1{
+  color: red;
+}
+
+.videos-h1{
+  color: red;
+}
+
+.projects-h1{
+  color: blue;
 }
