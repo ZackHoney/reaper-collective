@@ -15,8 +15,7 @@ const Login = () => {
 
 
   return (
-    <body className="stats-body">
-
+    <div className='login-container'>
       <form className='login' onSubmit={handleSubmit}>
         <label>
           Name:
@@ -39,7 +38,7 @@ const Login = () => {
         <button type="submit">Log In</button>
       </form>
 
-    </body>
+    </div>
   )
 }
 
