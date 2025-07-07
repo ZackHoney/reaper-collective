@@ -75,27 +75,61 @@ html, body, #root {
   margin: 20px;
 }
 
-.home-text{
+.home-text, .login-container, .signup-container, .label{
   display: flex;
   background: transparent;
   justify-content: center;
 }
 
 .home-text p{
-  font-size: 50px;
+    font-size: 30px;
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 33%;
   align-items: center;
   justify-content: center;
   align-self: center;
   background-color: black;
   border: 2px solid white;
   border-radius: 10px;
-  padding: 2rem;
+  padding:2rem;
+} 
+
+.login, .signup-form{
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  background-color: black;
+  border: 2px solid white;
+  border-radius: 10px;
+  padding:2px;
 }
 
-.login-container{
-  display: flex;
-  width: 100vw;
+.input-field {
+  flex: 1;
+  font-weight: bold;
+  width: 100%;
+  height: 50px;
+  outline: none;
+  font-size: x-large;
 }
+
+.login-button, .signup-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background: rgb(0, 0, 0);
+  color: white;
+  border: 2px solid silver;
+  border-radius: 10px;
+  font-size: x-large;
+  padding: 10px;
+  margin: 10px;
+  text-decoration: none;
+}
+
