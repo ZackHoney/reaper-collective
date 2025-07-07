@@ -58,21 +58,69 @@ html, body, #root {
   text-decoration: none;
 }
 
-.home-h1, .stats-h1 {
-  color: white;
+
+
+.servers-h1, .projects-h1, .projects-h2, .stats-h1{
+  font-size: xx-large;
+  background: rgba(0,0,0,0.85);
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 2px;
+  margin: 2px;
 }
 
 
 .stats {
   display: flex;
-  justify-self: center;
-  background-image: url('/src/images/skull_soldier-01.jpg');
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
   background-position: center;
   background-size: cover;
-  width: 98.5vw;
-  height: 75vh;
-  padding: 10px;
-  margin: 20px;
+  background-repeat: no-repeat;
+  padding-top: 2rem;
+}
+
+.stats-h1 {
+  color: white;
+  font-size: xx-large;
+  background: rgba(0,0,0,0.85);
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 2px 16px;
+  margin-bottom: 2rem;
+}
+
+.stats-list {
+  background: rgba(0,0,0,0.85);
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 2rem 3rem;
+  color: #fff;
+  font-size: 1.2rem;
+  list-style: none;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+  min-width: 320px;
+  max-width: 90vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.stats-list li {
+  color: #ddd;
+  font-size: 1.1rem;
+  border-bottom: 1px solid #444;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.stats-list li:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .home-text, .login-container, .signup-container, .label{
@@ -89,7 +137,7 @@ html, body, #root {
   align-items: center;
   justify-content: center;
   align-self: center;
-  background-color: black;
+  background: rgba(0,0,0,0.85);
   border: 2px solid white;
   border-radius: 10px;
   padding:2rem;
@@ -103,7 +151,7 @@ html, body, #root {
   align-items: center;
   justify-content: center;
   align-self: center;
-  background-color: black;
+  background: rgba(0,0,0,0.85);
   border: 2px solid white;
   border-radius: 10px;
   padding:2px;
@@ -199,5 +247,365 @@ html, body, #root {
   margin-top: auto;
   width: 100%;
   justify-content: center;
+  padding: 2px;
+}
+
+/* Add to your App.css for Projects page styling consistency */
+
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 2rem;
+}
+
+.projects-h1 {
+  color: white;
+  font-size: xx-large;
+  background: black;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 2px 16px;
+  margin-bottom: 2rem;
+}
+
+.projects-section {
+  margin-bottom: 2rem;
+  width: 80vw;
+  max-width: 800px;
+}
+
+.projects-section h2 {
+  color: white;
+  font-size: x-large;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid silver;
+  padding-bottom: 0.5rem;
+}
+
+.projects-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project-card{
+  background: rgba(0,0,0,0.85);
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.7);
+  border-color: silver;
+}
+
+.project-card h3 {
+  color: white;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.3rem;
+}
+
+.project-card p {
+  color: #ddd;
+  font-size: 1.05rem;
+  margin-bottom: 0.7rem;
+}
+
+.project-status {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.2rem 0.7rem;
+  border-radius: 6px;
+  background: #444;
+  color: #fff;
+  font-size: 0.95rem;
+  border: 1px solid silver;
+  font-weight: bold;
+}
+
+/* Add to your App.css for Videos page styling consistency */
+
+.videos-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 2rem;
+}
+
+.videos-h1 {
+  color: white;
+  font-size: xx-large;
+  background: rgba(0,0,0,0.85);
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 2px 16px;
+  margin-bottom: 2rem;
+}
+
+.videos-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  width: 80vw;
+}
+
+.video-card {
+  background: rgba(0,0,0,0.85);
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  color: #fff;
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.video-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.7);
+  border-color: silver;
+}
+
+.video-frame {
+  width: 320px;
+  height: 180px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border: none;
+  background: #222;
+}
+
+.video-card h3 {
+  color: white;
+  margin: 0.5rem 0 0.5rem 0;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.video-card p {
+  color: #ddd;
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+/* Add to your App.css for Gallery page styling consistency */
+
+.gallery-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 2rem;
+}
+
+.gallery-h1 {
+  color: white;
+  font-size: xx-large;
+  background: rgba(0,0,0,0.85);
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 2px 16px;
+  margin-bottom: 2rem;
+}
+
+.gallery-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  width: 80vw;
+}
+
+.gallery-card {
+  background: rgba(0,0,0,0.85);
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  color: #fff;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.gallery-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.7);
+  border-color: silver;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  background: #222;
+}
+
+.gallery-caption {
+  color: #ddd;
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.gallery-user {
+  color: #aaa;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+/* Add to your App.css for Monetization page styling consistency */
+
+.monetization-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 2rem;
+}
+
+.monetization-h1 {
+  color: white;
+  font-size: xx-large;
+  background: rgba(0,0,0,0.85);
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 2px 16px;
+  margin-bottom: 2rem;
+}
+
+.monetization-content {
+  background: rgba(0,0,0,0.85);
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 2rem;
+  color: #fff;
+  width: 400px;
+  max-width: 90vw;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.monetization-list {
+  color: #ddd;
+  font-size: 1.1rem;
+  margin: 1rem 0 2rem 0;
+  padding-left: 1.2rem;
+  text-align: left;
+  width: 100%;
+}
+
+.monetization-list li {
+  margin-bottom: 0.7rem;
+}
+
+.monetization-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.monetization-actions .button {
+  width: 100%;
+  justify-content: center;
+  font-size: 1.1rem;
+  padding: 10px 0;
+}
+
+/* Add to your App.css for Mods page styling consistency */
+
+.mods-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 2rem;
+}
+
+.mods-h1 {
+  color: white;
+  font-size: xx-large;
+  background: rgba(0,0,0,0.85);
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 2px 16px;
+  margin-bottom: 2rem;
+}
+
+.mods-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  width: 80vw;
+}
+
+.mod-card {
+  background: rgba(0,0,0,0.85);
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  color: #fff;
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.mod-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.7);
+  border-color: silver;
+}
+
+.mod-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  border: 2px solid silver;
+  margin-bottom: 1rem;
+  background: #222;
+  object-fit: cover;
+}
+
+.mod-role {
+  color: #ddd;
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.mod-bio {
+  color: #aaa;
+  font-size: 0.95rem;
+  text-align: center;
 }
 

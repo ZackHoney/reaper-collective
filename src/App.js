@@ -13,7 +13,7 @@ import Stats from './components/Stats'
 import Signup from './components/Signup';
 
 function App() {
-return (
+  return (
     <div>
       <NavBar />
       <Routes>
@@ -26,11 +26,11 @@ return (
         <Route path='/monetization' element={<Monetization />} />
         <Route path='/mods' element={<Mods />} />
         <Route path='/stats' element={<Stats />} />
+        <Route path='/stats/:username' element={<Stats />} /> {/* <-- Add this line */}
         <Route path='/signup' element={<Signup />} />
       </Routes>
     </div>
   )
 }
-
 
 export default App;

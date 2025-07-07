@@ -14,7 +14,7 @@ const NavBar = () => {
         <a href="/gallery" className='button'>Gallery</a>
         <a href="/monetization" className='button'>Monetization</a>
         <a href="/mods" className='button'>The Mods</a>
-        <a href="/stats" className='button'>My Stats</a>
+        <a href="/stats" className='button'>Stats</a>
       </nav>
     </div>
   )
