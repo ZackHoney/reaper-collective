@@ -18,7 +18,7 @@ const UserStats = ({ stats }) => {
         <li>Losses: {stats.losses}</li>
         <li>Rank: {stats.rank}</li>
       </ul>
-      <a href="/stats" className="button">Back to Stats</a>
+      <a href="/stats" className="stats-button">Back to Stats</a>
     </div>
   );
 };

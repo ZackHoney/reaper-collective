@@ -166,7 +166,7 @@ html, body, #root {
   font-size: x-large;
 }
 
-.login-button, .signup-btn {
+.login-button, .signup-btn, .stats-button {
   display: flex;
   flex-direction: row;
   align-items: center;
