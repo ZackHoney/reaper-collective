@@ -15,29 +15,31 @@ const Login = () => {
 
 
   return (
+    <body className="stats-body">
 
-    <form className='login' onSubmit={handleSubmit}>
-      <label>
-        Name:
-        <input
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+      <form className='login' onSubmit={handleSubmit}>
+        <label>
+          Name:
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
           />
-      </label>
-      <br />
-      <label>
-        Password:
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+        </label>
+        <br />
+        <label>
+          Password:
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
-      </label>
-      <br />
-      <button type="submit">Log In</button>
-    </form>
-  
+        </label>
+        <br />
+        <button type="submit">Log In</button>
+      </form>
+
+    </body>
   )
 }
 
