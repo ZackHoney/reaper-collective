@@ -57,7 +57,6 @@ const Stats = () => {
   return (
     <div className='stats'>
       <UserStats stats={stats} />
-      <Link className="button" to="/stats">Back to user list</Link>
     </div>
   );
 }

@@ -10,7 +10,7 @@ const UserStats = ({ stats }) => {
   }
 
   return (
-    <div className='stats'>
+    <div className='user-stats'>
       <h1 className='stats-h1'>{stats.username}'s Stats</h1>
       <ul className='stats-list'>
         <li>Games Played: {stats.gamesPlayed}</li>
