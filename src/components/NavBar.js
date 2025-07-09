@@ -4,10 +4,10 @@ const NavBar = () => {
 
   return (
     <div className='dropdown'>
-      <button className="dropbtn"><IoMenu/></button>
+      <a href="/login" className='button'> Login</a>
+      <button className="dropbtn"><IoMenu /></button>
       <nav className="dropdown-content">
         <a href="/" className='button'>Home</a>
-        <a href="/login" className='button'> Login</a>
         <a href="/servers" className='button'>Servers</a>
         <a href="/projects" className='button'>Projects</a>
         <a href="/videos" className='button'>Videos</a>
