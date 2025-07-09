@@ -143,17 +143,7 @@ html, body, #root {
   justify-content: center;
 }
 
-.home-text {
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
-  background: none;
-}
+
 
 .home-text p{
   font-size: 30px;
