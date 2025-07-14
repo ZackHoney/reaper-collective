@@ -88,7 +88,7 @@ const Videos = () => {
 
       {username && (
         <form className="video-upload-form" onSubmit={handleSubmit} style={{marginBottom: '2rem'}}>
-          <h2>Upload a Video</h2>
+          <h2 className='videos-h1'>Upload a Video</h2>
           <input
             className="input-field"
             type="text"

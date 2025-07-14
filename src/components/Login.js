@@ -24,7 +24,7 @@ const Login = () => {
       if (res.ok) {
         alert('Login successful!');
         localStorage.setItem('username', name); // Save username
-        navigate(`/stats/${name}`);
+        navigate(`/`);
       } else {
         setError(data.message || 'Login failed');
       }
