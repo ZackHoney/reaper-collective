@@ -1,9 +1,11 @@
 import { IoMenu } from "react-icons/io5";
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
   const [loggedIn, setLoggedIn] = useState(false);
   const [username, setUsername] = useState('');
+  const navigate = useNavigate();
 
   useEffect(() => {
     const user = localStorage.getItem('username');
@@ -16,6 +18,9 @@ const NavBar = () => {
     setLoggedIn(false);
     setUsername('');
     window.location.href = '/login';
+    localStorage.removeItem('username');
+    localStorage.removeItem('userId');
+    navigate('/login'); // Redirect to login page after logout
   };
 
   return (

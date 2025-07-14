@@ -9,6 +9,7 @@ const Servers = () => {
   const [icon, setIcon] = useState('');
   const [error, setError] = useState('');
   const username = localStorage.getItem('username');
+  const userId = localStorage.getItem('userId'); // <-- moved here for use in render
 
   // Fetch servers from backend
   useEffect(() => {
@@ -30,10 +31,14 @@ const Servers = () => {
       return;
     }
     try {
+      if (!userId) {
+        setError('User ID not found. Please log in again.');
+        return;
+      }
       const res = await fetch('http://localhost:5000/api/servers', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, invite, description, icon })
+        body: JSON.stringify({ name, invite, description, icon, postedBy: userId })
       });
       const data = await res.json();
       if (res.ok) {
@@ -49,6 +54,8 @@ const Servers = () => {
       setError('Error adding server');
     }
   };
+
+
 
   return (
     <div className="servers-container">
@@ -91,7 +98,7 @@ const Servers = () => {
       )}
 
       {!username && (
-        <p style={{ color: '#ccc', marginBottom: '2rem' }}>
+        <p className='servers-h1'>
           Please sign in to add a server.
         </p>
       )}
@@ -105,14 +112,16 @@ const Servers = () => {
             <a href={server.invite} target="_blank" rel="noopener noreferrer" className="button">
               Join Server
             </a>
-            {username && server.postedBy === username && (
+            {userId && server.postedBy && String(server.postedBy) === String(userId) && (
               <button
                 className="login-button"
                 style={{ marginTop: '1rem', background: '#a00', borderColor: '#a00' }}
                 onClick={async () => {
                   try {
                     const res = await fetch(`http://localhost:5000/api/servers/${server.id}`, {
-                      method: 'DELETE'
+                      method: 'DELETE',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify({ userId })
                     });
                     if (res.ok) {
                       setServers(servers.filter(s => s.id !== server.id));
@@ -133,3 +142,4 @@ const Servers = () => {
 };
 
 export default Servers;
+

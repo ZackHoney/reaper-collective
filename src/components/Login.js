@@ -8,6 +8,8 @@ const Login = () => {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
+
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     setError('');
@@ -23,7 +25,8 @@ const Login = () => {
       const data = await res.json();
       if (res.ok) {
         alert('Login successful!');
-        localStorage.setItem('username', name); // Save username
+        localStorage.setItem('username', data.user.username); // Save username
+        localStorage.setItem('userId', data.user.id); // Save userId
         navigate(`/`);
       } else {
         setError(data.message || 'Login failed');
@@ -60,6 +63,7 @@ const Login = () => {
         <a href="/signup" className='signup-btn'>Sign Up</a>
         {error && <p style={{ color: 'red' }}>{error}</p>}
       </form>
+     
     </div>
   )
 }

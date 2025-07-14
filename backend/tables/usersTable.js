@@ -49,7 +49,8 @@ router.post('/login', (req, res) => {
       if (!row) {
         return res.status(401).json({ message: 'Invalid username or password' });
       }
-      res.status(200).json({ message: 'Login successful', user: row });
+      // Return user data to frontend; frontend will set localStorage
+      res.status(200).json({ message: 'Login successful', user: { id: row.id, username: row.username, email: row.email } });
     }
   );
 });
@@ -75,7 +76,5 @@ router.get('/users', (req, res) => {
     res.json(rows);
   });
 });
-
-
 
 module.exports = router;
