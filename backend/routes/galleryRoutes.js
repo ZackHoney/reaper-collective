@@ -25,4 +25,15 @@ router.post('/gallery', (req, res) => {
   );
 });
 
+// DELETE /api/gallery/:id
+router.delete('/gallery/:id', (req, res) => {
+  db.run('DELETE FROM gallery WHERE id = ?', [req.params.id], function (err) {
+    if (err) return res.status(500).json({ message: 'Database error' });
+    if (this.changes === 0) {
+      return res.status(404).json({ message: 'Image not found' });
+    }
+    res.json({ success: true });
+  });
+});
+
 module.exports = router;

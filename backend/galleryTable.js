@@ -5,7 +5,7 @@ const db = new sqlite3.Database('./gallery.db');
 db.run(`
   CREATE TABLE IF NOT EXISTS gallery (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    title TEXT NOT NULL,
+    caption TEXT NOT NULL,
     url TEXT NOT NULL,
     postedBy TEXT NOT NULL,
     createdAt DATETIME DEFAULT CURRENT_TIMESTAMP

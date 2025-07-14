@@ -109,7 +109,7 @@ const Videos = () => {
       )}
 
       {!username && (
-        <p style={{ color: '#ccc', marginBottom: '2rem' }}>
+        <p className='videos-h1'>
           Please sign in to upload a video.
         </p>
       )}

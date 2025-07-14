@@ -56,16 +56,16 @@ const Gallery = () => {
           <input
             className="input-field"
             type="text"
-            placeholder="Image URL"
-            value={url}
-            onChange={e => setUrl(e.target.value)}
+            placeholder="Caption"
+            value={caption}
+            onChange={e => setCaption(e.target.value)}
           />
           <input
             className="input-field"
             type="text"
-            placeholder="Caption"
-            value={caption}
-            onChange={e => setCaption(e.target.value)}
+            placeholder="Image URL"
+            value={url}
+            onChange={e => setUrl(e.target.value)}
           />
           <button className="login-button" type="submit">Upload</button>
           {error && <p style={{ color: 'red' }}>{error}</p>}
@@ -73,7 +73,7 @@ const Gallery = () => {
       )}
 
       {!username && (
-        <p style={{ color: '#ccc', marginBottom: '2rem' }}>
+        <p className='gallery-h1'>
           Please sign in to upload an image.
         </p>
       )}
@@ -82,6 +82,7 @@ const Gallery = () => {
         {photos.map((photo) => (
           <div className="gallery-card" key={photo.id}>
             <img src={photo.url} alt={''} className="gallery-img" />
+            <p>{photo.caption}</p>
             <p className="gallery-user">Posted by: {photo.postedBy}</p>
             {username && photo.postedBy === username && (
               <button

@@ -16,7 +16,7 @@ const UserStats = () => {
         if (data && data.username) {
           setStats(data);
         } else {
-          setError('User not found');
+          setError('User not found. Back to Users');
         }
       })
       .catch(() => setError('Error fetching stats'));
@@ -28,6 +28,19 @@ const UserStats = () => {
         <button
           className='button'
           onClick={() => window.location.href = '/login'}
+        >
+          {error}
+        </button>
+      </div>
+    );
+  }
+
+  if (error === 'User not found. Back to Users') {
+    return (
+      <div className='stats'>
+        <button
+          className='button'
+          onClick={() => window.location.href = '/stats'}
         >
           {error}
         </button>
