@@ -1,5 +1,5 @@
 const express = require('express');
-const db = require('../VideosTable'); // Import the db instance
+const db = require('../tables/VideosTable'); // Import the db instance
 const router = express.Router();
 
 // Get all videos

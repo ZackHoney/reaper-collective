@@ -1,6 +1,6 @@
 // backend/galleryRoutes.js
 const express = require('express');
-const db = require('../galleryTable');
+const db = require('../tables/galleryTable');
 const router = express.Router();
 
 router.get('/gallery', (req, res) => {
