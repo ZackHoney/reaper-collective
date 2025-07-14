@@ -25,8 +25,8 @@ function App() {
         <Route path='/gallery' element={<Gallery />} />
         <Route path='/monetization' element={<Monetization />} />
         <Route path='/mods' element={<Mods />} />
-        <Route path='/stats' element={<Stats />} />
-        <Route path='/stats/:username' element={<Stats />} /> {/* <-- Add this line */}
+        <Route path='/stats' element={<Stats />} />                {/* Show user list or prompt */}
+        <Route path='/stats/:username' element={<Stats />} />      {/* Show specific user's stats */}
         <Route path='/signup' element={<Signup />} />
       </Routes>
     </div>

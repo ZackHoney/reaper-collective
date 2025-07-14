@@ -1,18 +1,37 @@
 import '../App.css'
 import React, { useState } from 'react';
-
-
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log('Submitted Name:', name);
-    console.log('Submitted Password:', password);
+    setError('');
+    try {
+      const res = await fetch('http://localhost:5000/api/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          username: name,
+          password: password
+        })
+      });
+      const data = await res.json();
+      if (res.ok) {
+        alert('Login successful!');
+        localStorage.setItem('username', name); // Save username
+        navigate(`/stats/${name}`);
+      } else {
+        setError(data.message || 'Login failed');
+      }
+    } catch (err) {
+      setError('Error connecting to server');
+    }
   }
-
 
   return (
     <div className='login-container'>
@@ -39,8 +58,8 @@ const Login = () => {
         <br />
         <button type="submit" className='login-button'>Log In</button>
         <a href="/signup" className='signup-btn'>Sign Up</a>
+        {error && <p style={{ color: 'red' }}>{error}</p>}
       </form>
-
     </div>
   )
 }
