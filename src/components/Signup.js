@@ -12,17 +12,33 @@ const Signup = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Add your signup logic here (e.g., API call)
-    console.log(form)
-    alert('Signup submitted!');
-    setForm({
-    username: '',
-    email: '',
-    password: '',
-    confirmPassword: ''
-  });
+    try {
+      const res = await fetch('http://localhost:5000/api/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          username: form.username,
+          email: form.email,
+          password: form.password
+        })
+      });
+      const data = await res.json();
+      if (res.ok) {
+        alert('Signup successful!');
+        setForm({
+          username: '',
+          email: '',
+          password: '',
+          confirmPassword: ''
+        });
+      } else {
+        alert(data.message || 'Signup failed');
+      }
+    } catch (err) {
+      alert('Error connecting to server');
+    }
   };
 
   return (
