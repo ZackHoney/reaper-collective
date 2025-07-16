@@ -10,15 +10,11 @@ const Monetization = () => {
         </p>
         <ul className="monetization-list">
           <li>💎 <strong>Donations:</strong> Help keep our servers running smoothly.</li>
-          <li>🎁 <strong>Patreon:</strong> Get exclusive rewards and early access to new features.</li>
-          <li>🛒 <strong>Merch:</strong> Show your support with official community merchandise.</li>
         </ul>
         <div className="monetization-actions">
-          <a href="https://www.patreon.com/" target="_blank" rel="noopener noreferrer" className="button">
-            Support on Patreon
-          </a>
-          <a href="https://www.buymeacoffee.com/" target="_blank" rel="noopener noreferrer" className="button">
-            Buy Me a Coffee
+       
+          <a href="https://youtube.com/@thereapercollectiveovt?si=Uf725kLJn99AxM0o" target="_blank" rel="noopener noreferrer" className="button">
+            Our Youtube
           </a>
         </div>
       </div>
