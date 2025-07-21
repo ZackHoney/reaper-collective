@@ -7,6 +7,7 @@ const Videos = () => {
   const [url, setUrl] = useState('');
   const [error, setError] = useState('');
   const username = localStorage.getItem('username');
+  const role = localStorage.getItem('role'); // <-- get role from localStorage
 
   // Helper to convert a YouTube URL to embed format
   const getEmbedUrl = (inputUrl) => {
@@ -72,7 +73,9 @@ const Videos = () => {
   const handleDelete = async (id) => {
     try {
       const res = await fetch(`http://localhost:5000/api/videos/${id}`, {
-        method: 'DELETE'
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, role }) // send username and role for backend check
       });
       if (res.ok) {
         setVideos(videos.filter((video) => video.id !== id));
@@ -127,7 +130,7 @@ const Videos = () => {
             ></iframe>
             <h3>{video.title}</h3>
             <p>Posted by: {video.postedBy}</p>
-            {username && video.postedBy === username && (
+            {(username && (video.postedBy === username || role === 'admin')) && (
               <button
                 className="login-button"
                 style={{ marginTop: '1rem', background: '#a00', borderColor: '#a00' }}

@@ -27,6 +27,7 @@ const Login = () => {
         alert('Login successful!');
         localStorage.setItem('username', data.user.username); // Save username
         localStorage.setItem('userId', data.user.id); // Save userId
+        localStorage.setItem('role', data.user.role); // Must be 'admin' for admins
         navigate(`/`);
       } else {
         setError(data.message || 'Login failed');

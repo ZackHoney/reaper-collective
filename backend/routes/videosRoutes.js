@@ -28,9 +28,22 @@ router.post('/videos', (req, res) => {
 
 // Delete a video by id
 router.delete('/videos/:id', (req, res) => {
-  db.run('DELETE FROM videos WHERE id = ?', [req.params.id], function (err) {
+  const { username, role } = req.body;
+  const videoId = req.params.id;
+
+  db.get('SELECT postedBy FROM videos WHERE id = ?', [videoId], (err, row) => {
     if (err) return res.status(500).json({ message: 'Database error' });
-    res.json({ success: true });
+    if (!row) return res.status(404).json({ message: 'Video not found' });
+
+    // Allow delete if user is poster OR user is admin
+    if (row.postedBy !== username && role !== 'admin') {
+      return res.status(403).json({ message: 'Not authorized to delete this video' });
+    }
+
+    db.run('DELETE FROM videos WHERE id = ?', [videoId], function (err) {
+      if (err) return res.status(500).json({ message: 'Database error' });
+      res.json({ success: true });
+    });
   });
 });
 

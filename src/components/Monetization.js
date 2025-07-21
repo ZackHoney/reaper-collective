@@ -16,6 +16,9 @@ const Monetization = () => {
           <a href="https://youtube.com/@thereapercollectiveovt?si=Uf725kLJn99AxM0o" target="_blank" rel="noopener noreferrer" className="button">
             Our Youtube
           </a>
+           <a href="https://www.tiktok.com/@the.reaper.collective?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener noreferrer" className="button">
+            Our TikTok
+          </a>
         </div>
       </div>
     </div>

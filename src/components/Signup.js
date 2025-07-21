@@ -5,15 +5,38 @@ const Signup = () => {
     username: '',
     email: '',
     password: '',
-    confirmPassword: ''
+    confirmPassword: '',
+    role: 'user' // default role
   });
+  const [roleError, setRoleError] = useState('');
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  const handleRoleChange = (e) => {
+    setForm({ ...form, role: e.target.value });
+    setRoleError('');
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setRoleError('');
+    // Only allow selecting admin if no admin exists
+    if (form.role === 'admin') {
+      const res = await fetch('http://localhost:5000/api/users');
+      const users = await res.json();
+      const adminExists = users.some(u => u.role === 'admin');
+      if (adminExists) {
+        setRoleError('An admin already exists. Please select another role.');
+        return;
+      }
+    }
+    // Moderators must be approved by admin, so signup as user first
+    if (form.role === 'moderator') {
+      setRoleError('Moderator role must be approved by an admin. Please sign up as user.');
+      return;
+    }
     try {
       const res = await fetch('http://localhost:5000/api/signup', {
         method: 'POST',
@@ -21,7 +44,8 @@ const Signup = () => {
         body: JSON.stringify({
           username: form.username,
           email: form.email,
-          password: form.password
+          password: form.password,
+          role: form.role
         })
       });
       const data = await res.json();
@@ -31,7 +55,8 @@ const Signup = () => {
           username: '',
           email: '',
           password: '',
-          confirmPassword: ''
+          confirmPassword: '',
+          role: 'user'
         });
       } else {
         alert(data.message || 'Signup failed');
@@ -44,7 +69,7 @@ const Signup = () => {
   return (
     <div className="signup-container">
       <form className="signup-form" onSubmit={handleSubmit}>
-      <h1>Signup</h1>
+        <h1>Signup</h1>
         <label>
           <p className='label'>Username</p>
           <input
@@ -89,6 +114,20 @@ const Signup = () => {
             required
           />
         </label>
+        <label>
+          <p className='label'>Role</p>
+          <select
+            className="input-field"
+            name="role"
+            value={form.role}
+            onChange={handleRoleChange}
+          >
+            <option value="user">User</option>
+            <option value="moderator">Moderator (admin approval required)</option>
+            <option value="admin">Admin (only one allowed)</option>
+          </select>
+        </label>
+        {roleError && <p style={{ color: 'red' }}>{roleError}</p>}
         <button className="signup-btn" type="submit">Sign Up</button>
       </form>
     </div>
